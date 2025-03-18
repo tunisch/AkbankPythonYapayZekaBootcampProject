@@ -3,8 +3,8 @@ import heapq
 from typing import Dict, List, Set, Tuple, Optional
 
 class Istasyon:
-    def __init__(self, idx: str, ad: str, hat: str):
-        self.idx = idx
+    def __init__(self, id: str, ad: str, hat: str):
+        self.id = id
         self.ad = ad
         self.hat = hat
         self.komsular: List[Tuple['Istasyon', int]] = []  # (istasyon, süre) tuple'ları
@@ -17,10 +17,10 @@ class MetroAgi:
         self.istasyonlar: Dict[str, Istasyon] = {}
         self.hatlar: Dict[str, List[Istasyon]] = defaultdict(list)
 
-    def istasyon_ekle(self, idx: str, ad: str, hat: str) -> None:
-        if idx not in self.istasyonlar:
-            istasyon = Istasyon(idx, ad, hat)
-            self.istasyonlar[idx] = istasyon
+    def istasyon_ekle(self, id: str, ad: str, hat: str) -> None:
+        if id not in self.istasyonlar:
+            istasyon = Istasyon(id, ad, hat)
+            self.istasyonlar[id] = istasyon
             self.hatlar[hat].append(istasyon)
 
     def baglanti_ekle(self, istasyon1_id: str, istasyon2_id: str, sure: int) -> None:
