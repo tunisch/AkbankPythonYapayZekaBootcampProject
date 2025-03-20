@@ -7,17 +7,20 @@ class Istasyon:
         self.id = id
         self.ad = ad
         self.hat = hat
-        self.komsular: List[Tuple['Istasyon', int]] = []  # (istasyon, süre) tuple'ları
+        self.komsular: List[Tuple['Istasyon', int]] = []  # (istasyon, süre) tuple'ları  
 
-    def komsu_ekle(self, istasyon: 'Istasyon', sure: int):
-        self.komsular.append((istasyon, sure))
-
+    def komsu_ekle(self, istasyon: 'Istasyon', sure: int): 
+        self.komsular.append((istasyon, sure)) 
+ 
 class MetroAgi:
     def __init__(self):
         self.istasyonlar: Dict[str, Istasyon] = {}
         self.hatlar: Dict[str, List[Istasyon]] = defaultdict(list)
 
-    def istasyon_ekle(self, id: str, ad: str, hat: str) -> None:
+    def istasyon_ekle(self, id: str, ad: str, hat: str) -> None: # -> none bu ifade ne icin kullanilir ne anlama gelir?  -> none ifadesi fonksiyonun geriye değer döndürmediğini belirtir ne zaman kullaniriz ? 
+        # İstasyon varsa ekleme yapma # -> none bu ifade ne icin kullanilir ne anlama gelir?  -> none ifadesi fonksiyonun geriye değer döndürmediğini belirtir ne zaman kullaniriz ? 
+
+
         if id not in self.istasyonlar:
             istasyon = Istasyon(id, ad, hat)
             self.istasyonlar[id] = istasyon
@@ -43,13 +46,15 @@ class MetroAgi:
         - Ziyaret edilen istasyonları takip edin
         - Her adımda komşu istasyonları keşfedin
         """
-        # TODO: Bu fonksiyonu tamamlayın
-        pass
+    
+
         if baslangic_id not in self.istasyonlar or hedef_id not in self.istasyonlar:
             return None
         baslangic = self.istasyonlar[baslangic_id]
         hedef = self.istasyonlar[hedef_id]
-        ziyaret_edildi = {baslangic}        
+        ziyaret_edildi = set()   
+
+
 
 
     def en_hizli_rota_bul(self, baslangic_id: str, hedef_id: str) -> Optional[Tuple[List[Istasyon], int]]:
@@ -77,9 +82,10 @@ class MetroAgi:
         ziyaret_edildi = set()
 
 # Örnek Kullanım
-if __name__ == "__main__":
-    metro = MetroAgi()
+if __name__ == "__main__": 
+    metro = MetroAgi() 
     
+
     # İstasyonlar ekleme
     # Kırmızı Hat
     metro.istasyon_ekle("K1", "Kızılay", "Kırmızı Hat")
