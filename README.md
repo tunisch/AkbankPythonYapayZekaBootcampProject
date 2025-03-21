@@ -10,9 +10,9 @@ Bu proje, bir metro ağı simülatörüdür. Python kullanılarak geliştirilen 
 
 ### **Projenin Amaçları:**
 
-- Kullanıcının belirlediği başlangıç ve hedef istasyonlar arasında **en az aktarma** yaparak ulaşımı sağlamak.
-- Kullanıcının belirlediği başlangıç ve hedef istasyonlar arasında **en hızlı rota** hesaplamak. 🕒 :clock3: → Zaman Yönetimi ⚡ :zap: → Hızlı Rota / Elektrikli Metro
-- Gerçek dünya metro sistemlerine benzer bir yapı sunarak ağ analizlerini mümkün kılmak.
+🚇 Kullanıcının belirlediği başlangıç ve hedef istasyonlar arasında en az aktarma yaparak ulaşımı sağlamak.
+🚄 Kullanıcının belirlediği başlangıç ve hedef istasyonlar arasında en hızlı rota hesaplamak.
+🌍 Gerçek dünya metro sistemlerine benzer bir yapı sunarak ağ analizlerini mümkün kılmak.
 
 ---
 
@@ -33,10 +33,10 @@ Bu proje, bir metro ağı simülatörüdür. Python kullanılarak geliştirilen 
 - BFS (Breadth-First Search), **en kısa adım sayısını** bulmaya yönelik bir arama algoritmasıdır.
 - Bu projede **en az aktarmalı rota** bulmak için kullanılmıştır.
 - **Çalışma Mantığı:**
-  1. Başlangıç istasyonunu kuyruğa ekler. :railway_track:
-  2. Her iterasyonda mevcut istasyonu kontrol eder.
-  3. Eğer hedef istasyon bulunursa durur ve sonucu döndürür.
-  4. Komşu istasyonları sırayla kuyruğa ekler ve ziyaret edildiğini işaretler.
+1.🚉 Başlangıç istasyonunu kuyruğa ekler.
+2.🌀 Her iterasyonda mevcut istasyonu kontrol eder.
+3.🎯 Eğer hedef istasyon bulunursa durur ve sonucu döndürür.
+4.🔄 Komşu istasyonları sırayla kuyruğa ekler ve ziyaret edildiğini işaretler.
 
 #### **BFS Görselleştirilmiş Akış Şeması:**
 
@@ -55,13 +55,13 @@ flowchart TD
 
 ### **A* Algoritması (En Hızlı Rota)**
 
-- A* algoritması, **en kısa süreyi** hesaplamak için kullanılmıştır.
-- **Öncelikli Kuyruk (Priority Queue) kullanarak** en düşük süreli yolu öncelikli olarak inceler.
-- **Çalışma Mantığı:**
-  1. Başlangıç istasyonunu öncelik kuyruğuna ekler.
-  2. Süresi en düşük olan istasyonu kuyruğun başına alır.
-  3. Hedef istasyon bulunursa süre ile birlikte sonucu döndürür.
-  4. Komşu istasyonları kuyruğa ekler ve günceller.
+🚀 A algoritması*, en kısa süreyi hesaplamak için kullanılmıştır.
+Öncelikli Kuyruk kullanarak en düşük süreli yolu öncelikli olarak inceler.
+Çalışma Mantığı:
+1.🚉 Başlangıç istasyonunu öncelik kuyruğuna ekler.
+2.⏱️ Süresi en düşük olan istasyonu kuyruğun başına alır.
+3.🎯 Hedef istasyon bulunursa süre ile birlikte sonucu döndürür.
+🔄 Komşu istasyonları kuyruğa ekler ve günceller.
 
 #### **A* Algoritması Akış Şeması:**
 
@@ -107,7 +107,7 @@ print(f"En hızlı rota ({sure} dakika):", " -> ".join(i.ad for i in rota))
 
 ## 5. Projeyi Geliştirme Fikirleri
 
-- **Gerçek Metro Verisi ile Entegrasyon:** Daha gerçekçi veriler kullanarak projeyi genişletmek.
-- **Grafik Arayüz (GUI) Desteği:** Kullanıcıların harita üzerinde istasyon seçebileceği bir arayüz oluşturmak.
-- **Gerçek Zamanlı Trafik ve Gecikme Durumu:** Gerçek zamanlı tren yoğunluğu ve gecikmeleri hesaba katarak daha dinamik bir sistem tasarlamak.
-- **Farklı Ulaşım Modları ile Entegrasyon:** Otobüs, tramvay gibi diğer ulaşım türlerini de hesaba katarak bir "şehir içi ulaşım optimizasyonu" sunmak.
+🌍 **Gerçek Metro Verisi ile Entegrasyon: Daha gerçekçi veriler kullanarak projeyi genişletmek.
+💻 **Grafik Arayüz (GUI) Desteği: Kullanıcıların harita üzerinde istasyon seçebileceği bir arayüz oluşturmak.
+📊 **Gerçek Zamanlı Trafik ve Gecikme Durumu: Gerçek zamanlı tren yoğunluğu ve gecikmeleri hesaba katarak daha dinamik bir sistem tasarlamak.
+🚋 **Farklı Ulaşım Modları ile Entegrasyon: Otobüs, tramvay gibi diğer ulaşım türlerini de hesaba katarak bir "şehir içi ulaşım optimizasyonu" sunmak.
