@@ -1,4 +1,4 @@
-# Metro Ağı Simülasyonu metro: → Metro railway_track: → Demiryolu Hattı
+# Metro Ağı Simülasyonu metro: 🚇 :metro
 
 ## 1. Proje Başlığı ve Kısa Açıklama
 
