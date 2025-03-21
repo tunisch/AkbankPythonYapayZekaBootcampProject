@@ -1,4 +1,4 @@
-# Metro Ağı Simülasyonu metro: :metro:
+# Metro Ağı Simülasyonu :metro:
 
 ## 1. Proje Başlığı ve Kısa Açıklama
 
@@ -33,7 +33,7 @@ Bu proje, bir metro ağı simülatörüdür. Python kullanılarak geliştirilen 
 - BFS (Breadth-First Search), **en kısa adım sayısını** bulmaya yönelik bir arama algoritmasıdır.
 - Bu projede **en az aktarmalı rota** bulmak için kullanılmıştır.
 - **Çalışma Mantığı:**
-  1. Başlangıç istasyonunu kuyruğa ekler. 🛤 :railway_track: → Demiryolu Hattı
+  1. Başlangıç istasyonunu kuyruğa ekler. :railway_track:
   2. Her iterasyonda mevcut istasyonu kontrol eder.
   3. Eğer hedef istasyon bulunursa durur ve sonucu döndürür.
   4. Komşu istasyonları sırayla kuyruğa ekler ve ziyaret edildiğini işaretler.
@@ -82,7 +82,7 @@ flowchart TD
 ```python
 # Örnek Metro Ağı Tanımlama
 metro = MetroAgi()
-metro.istasyon_ekle("M1", "AŞTİ", "Mavi Hat") 🚉 :station: → Tren İstasyonu
+metro.istasyon_ekle("M1", "AŞTİ", "Mavi Hat")  :station:
 metro.istasyon_ekle("M2", "Kızılay", "Mavi Hat")  
 metro.baglanti_ekle("M1", "M2", 5)
 
