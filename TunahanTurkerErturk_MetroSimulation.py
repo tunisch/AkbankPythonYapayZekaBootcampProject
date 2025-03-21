@@ -17,17 +17,15 @@ class MetroAgi:
         self.istasyonlar: Dict[str, Istasyon] = {}
         self.hatlar: Dict[str, List[Istasyon]] = defaultdict(list)
 
-    def istasyon_ekle(self, id: str, ad: str, hat: str) -> None: # -> none bu ifade ne icin kullanilir ne anlama gelir?  -> none ifadesi fonksiyonun geriye değer döndürmediğini belirtir ne zaman kullaniriz ? 
-        # İstasyon varsa ekleme yapma # -> none bu ifade ne icin kullanilir ne anlama gelir?  -> none ifadesi fonksiyonun geriye değer döndürmediğini belirtir ne zaman kullaniriz ? 
-
-
-        if id not in self.istasyonlar:
-            istasyon = Istasyon(id, ad, hat)
-            self.istasyonlar[id] = istasyon
-            self.hatlar[hat].append(istasyon)
+    def istasyon_ekle(self, id: str, ad: str, hat: str) -> None:  
+        
+        if id not in self.istasyonlar: 
+            istasyon = Istasyon(id, ad, hat) 
+            self.istasyonlar[id] = istasyon  
+            self.hatlar[hat].append(istasyon) 
 
     def baglanti_ekle(self, istasyon1_id: str, istasyon2_id: str, sure: int) -> None:
-        istasyon1 = self.istasyonlar[istasyon1_id]
+        istasyon1 = self.istasyonlar[istasyon1_id] 
         istasyon2 = self.istasyonlar[istasyon2_id]
         istasyon1.komsu_ekle(istasyon2, sure)
         istasyon2.komsu_ekle(istasyon1, sure)
@@ -52,7 +50,23 @@ class MetroAgi:
             return None
         baslangic = self.istasyonlar[baslangic_id]
         hedef = self.istasyonlar[hedef_id]
-        ziyaret_edildi = set()   
+        kuyruk = deque([(baslangic, [baslangic])])
+        ziyaret_edildi = set()   # Ziyaret edilen istasyonları takip etmek için bir küme oluşturdum.
+        
+        # Kuyruk boş olana kadar devam et.
+        while kuyruk:
+            mevcut_istasyon, yol = kuyruk.popleft() # Kuyruktan bir istasyon alınır.
+            if mevcut_istasyon == hedef: # Eger mevcut istasyon hedef istasyon ise yol listesini dondur.
+                return yol
+            
+            if mevcut_istasyon.id not in ziyaret_edildi:  # Eğer bu istasyon ziyaret edilmediyse, onu ziyaret edildi olarak işaretle ve kuyruğa ekleyin.
+                ziyaret_edildi.add(mevcut_istasyon.id)
+                for istasyon, sure in mevcut_istasyon.komsular:
+                    if istasyon.id not in ziyaret_edildi:
+                        kuyruk.append((istasyon, yol + [istasyon]))
+
+        return None
+
 
 
 
@@ -72,14 +86,27 @@ class MetroAgi:
         - Her adımda toplam süreyi hesaplayın
         - En düşük süreye sahip rotayı seçin
         """
-        # TODO: Bu fonksiyonu tamamlayın
-        pass
+       
         if baslangic_id not in self.istasyonlar or hedef_id not in self.istasyonlar:
             return None
 
         baslangic = self.istasyonlar[baslangic_id]
         hedef = self.istasyonlar[hedef_id]
+        pq = [(0, id(baslangic), baslangic, [baslangic])]
         ziyaret_edildi = set()
+
+        
+        while pq:
+            mevcut_sure, _, mevcut_istasyon, yol = heapq.heappop(pq)
+            if mevcut_istasyon == hedef:
+                return yol, mevcut_sure
+
+            ziyaret_edildi.add(mevcut_istasyon)
+            for komsu, sure in mevcut_istasyon.komsular:
+                if komsu not in ziyaret_edildi:
+                    heapq.heappush(pq, (mevcut_sure + sure, id(komsu), komsu, yol + [komsu]))
+
+        return None
 
 # Örnek Kullanım
 if __name__ == "__main__": 
