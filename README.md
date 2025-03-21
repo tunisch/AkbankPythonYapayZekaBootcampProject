@@ -1,8 +1,9 @@
-# Metro Ağı Simülasyonu 🚇 :metro: → Metro 🛤 :railway_track: → Demiryolu Hattı
+# Metro Ağı Simülasyonu metro: → Metro railway_track: → Demiryolu Hattı
 
 ## 1. Proje Başlığı ve Kısa Açıklama
 
 Bu proje, bir metro ağı simülatörüdür. Python kullanılarak geliştirilen bu proje, belirli bir metro hattı üzerinde en az aktarmalı rotayı ve en hızlı rotayı bulmayı amaçlar. 
+
 📍 En iyi rotayı hesaplamak için **BFS & A*** kullanıyoruz!  
 ⚡ Hızlı ulaşım için optimize edilmiş algoritmalar!  
 ⏳ Gerçek zamanlı süre tahminleri ve istasyonlar arası bağlantılar!  
