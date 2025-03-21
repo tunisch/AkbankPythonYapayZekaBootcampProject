@@ -1,13 +1,16 @@
-# Metro Ağı Simülasyonu
+# Metro Ağı Simülasyonu 🚇 :metro: → Metro 🛤 :railway_track: → Demiryolu Hattı
 
 ## 1. Proje Başlığı ve Kısa Açıklama
 
-Bu proje, bir metro ağı simülatörüdür. Python kullanılarak geliştirilen bu proje, belirli bir metro hattı üzerinde en az aktarmalı rotayı ve en hızlı rotayı bulmayı amaçlar.
+Bu proje, bir metro ağı simülatörüdür. Python kullanılarak geliştirilen bu proje, belirli bir metro hattı üzerinde en az aktarmalı rotayı ve en hızlı rotayı bulmayı amaçlar. 
+📍 En iyi rotayı hesaplamak için **BFS & A*** kullanıyoruz!  
+⚡ Hızlı ulaşım için optimize edilmiş algoritmalar!  
+⏳ Gerçek zamanlı süre tahminleri ve istasyonlar arası bağlantılar!  
 
 ### **Projenin Amaçları:**
 
 - Kullanıcının belirlediği başlangıç ve hedef istasyonlar arasında **en az aktarma** yaparak ulaşımı sağlamak.
-- Kullanıcının belirlediği başlangıç ve hedef istasyonlar arasında **en hızlı rota** hesaplamak.
+- Kullanıcının belirlediği başlangıç ve hedef istasyonlar arasında **en hızlı rota** hesaplamak. 🕒 :clock3: → Zaman Yönetimi ⚡ :zap: → Hızlı Rota / Elektrikli Metro
 - Gerçek dünya metro sistemlerine benzer bir yapı sunarak ağ analizlerini mümkün kılmak.
 
 ---
@@ -29,7 +32,7 @@ Bu proje, bir metro ağı simülatörüdür. Python kullanılarak geliştirilen 
 - BFS (Breadth-First Search), **en kısa adım sayısını** bulmaya yönelik bir arama algoritmasıdır.
 - Bu projede **en az aktarmalı rota** bulmak için kullanılmıştır.
 - **Çalışma Mantığı:**
-  1. Başlangıç istasyonunu kuyruğa ekler.
+  1. Başlangıç istasyonunu kuyruğa ekler. 🛤 :railway_track: → Demiryolu Hattı
   2. Her iterasyonda mevcut istasyonu kontrol eder.
   3. Eğer hedef istasyon bulunursa durur ve sonucu döndürür.
   4. Komşu istasyonları sırayla kuyruğa ekler ve ziyaret edildiğini işaretler.
@@ -78,8 +81,8 @@ flowchart TD
 ```python
 # Örnek Metro Ağı Tanımlama
 metro = MetroAgi()
-metro.istasyon_ekle("M1", "AŞTİ", "Mavi Hat")
-metro.istasyon_ekle("M2", "Kızılay", "Mavi Hat")
+metro.istasyon_ekle("M1", "AŞTİ", "Mavi Hat") 🚉 :station: → Tren İstasyonu
+metro.istasyon_ekle("M2", "Kızılay", "Mavi Hat")  
 metro.baglanti_ekle("M1", "M2", 5)
 
 # En Az Aktarmalı Rota
