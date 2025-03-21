@@ -95,9 +95,9 @@ print(f"En hızlı rota ({sure} dakika):", " -> ".join(i.ad for i in rota))
 
 | Başlangıç | Hedef    | En Az Aktarmalı Rota                      | En Hızlı Rota ve Süre                             |
 | --------- | -------- | ----------------------------------------- | ------------------------------------------------- |
-| AŞTİ      | OSB      | AŞTİ -> Kızılay -> OSB                    | AŞTİ -> Kızılay -> OSB (10 dk)                    |
-| Batıkent  | Keçiören | Batıkent -> Demetevler -> Gar -> Keçiören | Batıkent -> Demetevler -> Gar -> Keçiören (14 dk) |
-| Keçiören  | AŞTİ     | Keçiören -> Gar -> Kızılay -> AŞTİ        | Keçiören -> Gar -> Kızılay -> AŞTİ (11 dk)        |
+| AŞTİ      | OSB      | AŞTİ -> Kızılay -> OSB                    | AŞTİ -> Kızılay -> OSB (25 dk)                    |
+| Batıkent  | Keçiören | Batıkent -> Demetevler -> Gar -> Keçiören | Batıkent -> Demetevler -> Gar -> Keçiören (21 dk) |
+| Keçiören  | AŞTİ     | Keçiören -> Gar -> Kızılay -> AŞTİ        | Keçiören -> Gar -> Kızılay -> AŞTİ (19 dk)        |
 
 ---
 
